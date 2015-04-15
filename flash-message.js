@@ -21,7 +21,7 @@ Ember.FlashMessageController = Ember.Controller.extend({
 Ember.FlashMessageView = Ember.View.extend({
   autoDismiss: function() {
     var that = this;
-    if (this.get('_state') === 'inDOM') {
+    if (this.get('_isVisible')) {
       Ember.run(function() {
         that.$().fadeOut(250, function() {
           if (that.get('controller')) {
